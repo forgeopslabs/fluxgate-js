@@ -72,7 +72,16 @@ export class FluxGateService {
     return this.flag(key, false);
   }
 
-  /** A flag's current value. Reactive when read in a template, `computed` or `effect`. */
+  /**
+   * A flag's current value. Reactive when read in a template, `computed` or
+   * `effect`. A string, number or boolean default gives `string`, `number` or
+   * `boolean`, not the default's literal type; pass a type argument for a
+   * union of variants.
+   */
+  value(key: string, defaultValue: string): string;
+  value(key: string, defaultValue: number): number;
+  value(key: string, defaultValue: boolean): boolean;
+  value<T>(key: string, defaultValue: T): T;
   value<T>(key: string, defaultValue: T): T {
     return this.evaluate(key, defaultValue).value;
   }

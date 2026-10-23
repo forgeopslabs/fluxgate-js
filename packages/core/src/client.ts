@@ -31,8 +31,15 @@ export class FluxGateClient {
 
   /**
    * Evaluates one flag. The default value is returned on any error, and its
-   * type is the expected type of the flag (`null` accepts any value).
+   * type is the expected type of the flag (`null` accepts any value). A
+   * string, number or boolean default gives `string`, `number` or `boolean`,
+   * not the default's literal type; pass a type argument for a union of
+   * variants.
    */
+  evaluate(key: string, defaultValue: string, context?: EvaluationContext): Promise<FlagEvaluation<string>>;
+  evaluate(key: string, defaultValue: number, context?: EvaluationContext): Promise<FlagEvaluation<number>>;
+  evaluate(key: string, defaultValue: boolean, context?: EvaluationContext): Promise<FlagEvaluation<boolean>>;
+  evaluate<T extends JsonValue>(key: string, defaultValue: T, context?: EvaluationContext): Promise<FlagEvaluation<T>>;
   async evaluate<T extends JsonValue>(
     key: string,
     defaultValue: T,

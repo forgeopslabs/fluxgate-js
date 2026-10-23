@@ -15,9 +15,17 @@ function useRevision(): number {
  * any error, and its type is the expected type of the flag.
  *
  * ```tsx
- * const theme = useFlag('checkout-theme', 'classic');
+ * const theme = useFlag('checkout-theme', 'classic'); // string
  * ```
+ *
+ * A string, number or boolean default gives `string`, `number` or `boolean`,
+ * not the default's literal type. Pass a type argument for a union of
+ * variants: `useFlag<'classic' | 'express'>('checkout-theme', 'classic')`.
  */
+export function useFlag(key: string, defaultValue: string): string;
+export function useFlag(key: string, defaultValue: number): number;
+export function useFlag(key: string, defaultValue: boolean): boolean;
+export function useFlag<T>(key: string, defaultValue: T): T;
 export function useFlag<T>(key: string, defaultValue: T): T {
   return useFlagDetails(key, defaultValue).value;
 }
