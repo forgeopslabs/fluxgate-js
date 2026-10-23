@@ -64,6 +64,11 @@ export class FlagSnapshot {
     return this.currentContext;
   }
 
+  /** `true` after {@link close}. */
+  get isClosed(): boolean {
+    return this.closed;
+  }
+
   /** Increases on every change; handy as a cheap dependency for UI frameworks. */
   get revision(): number {
     return this.changes;

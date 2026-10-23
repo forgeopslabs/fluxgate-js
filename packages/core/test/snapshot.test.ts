@@ -77,6 +77,7 @@ describe('FlagSnapshot', () => {
     const revision = snapshot.revision;
 
     snapshot.close();
+    expect(snapshot.isClosed).toBe(true);
     await vi.advanceTimersByTimeAsync(5000);
     expect(edge.requests).toHaveLength(4);
     expect(snapshot.revision).toBe(revision);
