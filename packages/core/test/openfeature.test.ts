@@ -32,6 +32,7 @@ describe('FluxGateWebProvider', () => {
     expect(client.getBooleanDetails('new-checkout', false).flagMetadata).toEqual({ team: 'checkout' });
     expect(client.getNumberDetails('checkout-theme', 3)).toMatchObject({ value: 3, errorCode: 'TYPE_MISMATCH' });
     expect(client.getObjectDetails('missing', {})).toMatchObject({ value: {}, errorCode: 'FLAG_NOT_FOUND' });
+    expect(client.getObjectDetails('checkout-theme', 'none')).toMatchObject({ value: 'express', variant: 'express' });
     expect(edge.requests[0]!.body).toEqual({
       context: { targetingKey: 'user-1', country: 'CA', since: '2026-01-01T00:00:00.000Z' },
     });
@@ -120,6 +121,11 @@ describe('FluxGateServerProvider', () => {
     });
     expect(await client.getObjectValue('limits', {}, { targetingKey: 'u1' })).toEqual({ max: 3 });
     expect(await client.getNumberValue('ratio', 0, { targetingKey: 'u1' })).toBe(0.5);
+    expect(await client.getObjectValue('checkout-theme', 'none', { targetingKey: 'u1' })).toBe('express');
+    expect(await client.getObjectDetails('new-checkout', 'off', { targetingKey: 'u2', country: 'US' })).toMatchObject({
+      value: 'off',
+      reason: 'TARGETING_MATCH',
+    });
     expect(await client.getBooleanDetails('new-checkout', false, {})).toMatchObject({
       errorCode: 'TARGETING_KEY_MISSING',
     });

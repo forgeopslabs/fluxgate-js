@@ -9,7 +9,7 @@ import {
 import { FluxGateClient } from '../client';
 import type { FluxGateOptions } from '../options';
 import type { FlagSnapshot } from '../snapshot';
-import { toFluxGateContext, toResolution } from './shared';
+import { anyTypeEvaluation, toFluxGateContext, toResolution } from './shared';
 
 export interface FluxGateWebProviderOptions {
   /** How often to re-fetch the flags, in milliseconds. `0` turns polling off. Default 30000. */
@@ -84,8 +84,12 @@ export class FluxGateWebProvider implements Provider {
     return this.resolve(flagKey, defaultValue);
   }
 
+  /** Accepts a flag of any type; see {@link anyTypeEvaluation}. */
   resolveObjectEvaluation<T extends JsonValue>(flagKey: string, defaultValue: T): ResolutionDetails<T> {
-    return this.resolve(flagKey, defaultValue);
+    if (!this.snapshot) {
+      return this.resolve(flagKey, defaultValue);
+    }
+    return toResolution(anyTypeEvaluation(this.snapshot.evaluate(flagKey, null), defaultValue));
   }
 
   private resolve<T>(flagKey: string, defaultValue: T): ResolutionDetails<T> {

@@ -21,6 +21,19 @@ export function toResolution<T>(evaluation: FlagEvaluation<T>): ResolutionDetail
   return details;
 }
 
+/**
+ * OpenFeature object resolution accepts a flag of any type. Evaluate with a
+ * `null` default, then use the caller's default on errors, for the code
+ * default and for the edge's "off" marker (`false` with no variant).
+ */
+export function anyTypeEvaluation<T>(evaluation: FlagEvaluation<JsonValue>, defaultValue: T): FlagEvaluation<T> {
+  const off = evaluation.value === null || (evaluation.value === false && !evaluation.variant);
+  if (evaluation.errorCode || off) {
+    return { ...evaluation, value: defaultValue };
+  }
+  return { ...evaluation, value: evaluation.value as T };
+}
+
 /** Turns an OpenFeature evaluation context into a FluxGate one. */
 export function toFluxGateContext(context: Record<string, unknown> | undefined): EvaluationContext {
   const result: EvaluationContext = {};

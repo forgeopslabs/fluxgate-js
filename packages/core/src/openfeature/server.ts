@@ -2,7 +2,7 @@ import type { EvaluationContext, JsonValue, Provider, ResolutionDetails } from '
 import { FluxGateClient } from '../client';
 import type { FluxGateOptions } from '../options';
 import type { JsonValue as FluxGateJsonValue } from '../types';
-import { toFluxGateContext, toResolution } from './shared';
+import { anyTypeEvaluation, toFluxGateContext, toResolution } from './shared';
 
 /**
  * OpenFeature provider for `@openfeature/server-sdk` (Node.js). Every
@@ -49,12 +49,14 @@ export class FluxGateServerProvider implements Provider {
     return this.resolve(flagKey, defaultValue, context);
   }
 
-  resolveObjectEvaluation<T extends JsonValue>(
+  /** Accepts a flag of any type; see {@link anyTypeEvaluation}. */
+  async resolveObjectEvaluation<T extends JsonValue>(
     flagKey: string,
     defaultValue: T,
     context: EvaluationContext,
   ): Promise<ResolutionDetails<T>> {
-    return this.resolve(flagKey, defaultValue, context);
+    const evaluation = await this.client.evaluate(flagKey, null, toFluxGateContext(context));
+    return toResolution(anyTypeEvaluation(evaluation, defaultValue));
   }
 
   private async resolve<T>(flagKey: string, defaultValue: T, context: EvaluationContext): Promise<ResolutionDetails<T>> {
