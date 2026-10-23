@@ -1,0 +1,21 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+  color: #1d2433;
+}
+.checkout {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #c9d1e0;
+}
+.theme-express {
+  background: #e7f7ef;
+  border-color: #3aa76d;
+}
+.status {
+  color: #4a5568;
+}
+.error {
+  color: #b42318;
+}
