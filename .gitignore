@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.angular/
+*.tsbuildinfo
+.DS_Store
+.env
+.env.*
+!.env.example
+samples/.setup-body
+samples/angular-sample/src/environments/fluxgate.generated.ts

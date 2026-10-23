@@ -1,0 +1,92 @@
+{
+  "name": "@forgeopslabs/fluxgate",
+  "version": "0.0.0-dev",
+  "description": "FluxGate feature flag client for browsers and Node.js, with OpenFeature providers",
+  "license": "Apache-2.0",
+  "author": "ForgeOps LABS",
+  "homepage": "https://github.com/forgeopslabs/fluxgate-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forgeopslabs/fluxgate-js.git",
+    "directory": "packages/core"
+  },
+  "keywords": [
+    "fluxgate",
+    "feature-flags",
+    "feature-toggles",
+    "openfeature",
+    "ofrep"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./openfeature/web": {
+      "import": {
+        "types": "./dist/openfeature/web.d.ts",
+        "default": "./dist/openfeature/web.js"
+      },
+      "require": {
+        "types": "./dist/openfeature/web.d.cts",
+        "default": "./dist/openfeature/web.cjs"
+      }
+    },
+    "./openfeature/server": {
+      "import": {
+        "types": "./dist/openfeature/server.d.ts",
+        "default": "./dist/openfeature/server.js"
+      },
+      "require": {
+        "types": "./dist/openfeature/server.d.cts",
+        "default": "./dist/openfeature/server.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "@openfeature/core": "^1.9.0",
+    "@openfeature/server-sdk": "^1.17.0",
+    "@openfeature/web-sdk": "^1.5.0"
+  },
+  "peerDependenciesMeta": {
+    "@openfeature/core": {
+      "optional": true
+    },
+    "@openfeature/server-sdk": {
+      "optional": true
+    },
+    "@openfeature/web-sdk": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@openfeature/core": "^1.12.0",
+    "@openfeature/server-sdk": "^1.23.0",
+    "@openfeature/web-sdk": "^1.10.0",
+    "tsup": "^8.5.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

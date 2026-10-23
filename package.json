@@ -1,0 +1,21 @@
+{
+  "name": "fluxgate-js",
+  "private": true,
+  "description": "FluxGate TypeScript SDK monorepo",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm --filter './packages/**' run build",
+    "test": "pnpm --filter './packages/**' run test",
+    "typecheck": "pnpm -r run typecheck",
+    "build:samples": "pnpm --filter './samples/**' run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "~5.8.3",
+    "vitest": "^3.2.7"
+  }
+}
