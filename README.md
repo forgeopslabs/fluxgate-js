@@ -101,8 +101,12 @@ React 18 and 19.
 published. The tag sets the version: tag `v1.2.0` publishes `1.2.0`; a prerelease such as
 `v1.3.0-beta.1` goes to the `next` dist-tag. Packages in the repository stay on `0.0.0-dev`.
 
-One-time setup: create the npm organization `forgeops`, create an automation (or granular
-publish) token that can publish to it, and add it as the repository secret `NPM_TOKEN`.
+Publishing uses npm [trusted publishing](https://docs.npmjs.com/trusted-publishers): each package
+lists this repository and `release.yml` as its Trusted Publisher on npmjs.com (package **Settings**,
+**Trusted Publisher**, **GitHub Actions**, organization `forgeopslabs`, repository `fluxgate-js`,
+workflow `release.yml`). No npm token is stored in the repository, and every version is published
+with provenance. Until a package has its Trusted Publisher, the workflow falls back to an
+`NPM_TOKEN` repository secret if one exists.
 
 ## License
 

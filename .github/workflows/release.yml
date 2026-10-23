@@ -3,8 +3,11 @@
 # The release tag sets the version of all three: tag v1.2.3 publishes 1.2.3.
 # A prerelease version such as 1.3.0-beta.1 is published under the "next" tag.
 #
-# Required repository secret:
-#   NPM_TOKEN - npm automation (or granular publish) token for the forgeops org
+# Authentication: npm trusted publishing (OIDC). Each package lists this
+# repository and workflow as its Trusted Publisher on npmjs.com, so no token is
+# needed and every version gets provenance. Until that is configured, npm falls
+# back to the NPM_TOKEN repository secret if it exists; delete the secret once
+# trusted publishing works.
 
 name: Release to npm
 
@@ -14,7 +17,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write # npm provenance
+  id-token: write # npm trusted publishing and provenance
 
 jobs:
   publish:
@@ -51,8 +54,24 @@ jobs:
       - run: pnpm build
       - run: pnpm test
 
+      # pnpm pack turns workspace: ranges into real versions (and packs the
+      # Angular package from its dist folder); npm publishes, because trusted
+      # publishing needs npm 11.5.1 or later.
+      - name: Pack
+        run: |
+          mkdir -p "$RUNNER_TEMP/packages"
+          for dir in packages/core packages/react packages/angular; do
+            (cd "$dir" && pnpm pack --pack-destination "$RUNNER_TEMP/packages")
+          done
+
+      - name: Install npm with trusted publishing support
+        run: npm install -g npm@^11.5.1
+
       - name: Publish
-        run: pnpm --filter './packages/**' publish --access public --no-git-checks --tag "$NPM_TAG"
+        run: |
+          for tarball in "$RUNNER_TEMP"/packages/*.tgz; do
+            npm publish "$tarball" --access public --tag "$NPM_TAG" --provenance
+          done
         env:
+          # Fallback only; trusted publishing is used when configured.
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: 'true'
