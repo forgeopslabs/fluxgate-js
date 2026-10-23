@@ -1,4 +1,4 @@
-import { FluxGateProvider, useFlagDetails, useFluxGateStatus, useIsEnabled } from '@forgeopslabs/fluxgate-react';
+import { FluxGateProvider, useFlagDetails, useFluxGateStatus, useIsEnabled } from '@forgeops/fluxgate-react';
 import { useState } from 'react';
 
 const options = {

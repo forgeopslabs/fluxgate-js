@@ -9,8 +9,8 @@
  *
  * Exits with status 1 when an evaluation fails.
  */
-import { FluxGateClient } from '@forgeopslabs/fluxgate';
-import { FluxGateServerProvider } from '@forgeopslabs/fluxgate/openfeature/server';
+import { FluxGateClient } from '@forgeops/fluxgate';
+import { FluxGateServerProvider } from '@forgeops/fluxgate/openfeature/server';
 import { OpenFeature } from '@openfeature/server-sdk';
 
 const baseUrl = process.env.FLUXGATE_BASE_URL || 'http://localhost:28081';

@@ -6,7 +6,7 @@ import {
   type Type,
 } from '@angular/core';
 import { TestBed, type ComponentFixture } from '@angular/core/testing';
-import { FluxGateClient } from '@forgeopslabs/fluxgate';
+import { FluxGateClient } from '@forgeops/fluxgate';
 import { afterEach, describe, expect, it } from 'vitest';
 import { FluxGateFlagDirective, FluxGateService, provideFluxGate, type FluxGateConfig } from '../dist';
 

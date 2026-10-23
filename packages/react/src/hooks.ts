@@ -1,4 +1,4 @@
-import type { FlagEvaluation, FluxGateClient, FluxGateError, SnapshotStatus } from '@forgeopslabs/fluxgate';
+import type { FlagEvaluation, FluxGateClient, FluxGateError, SnapshotStatus } from '@forgeops/fluxgate';
 import { useCallback, useSyncExternalStore } from 'react';
 import { useFluxGateContext } from './provider';
 

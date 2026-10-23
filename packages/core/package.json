@@ -1,5 +1,5 @@
 {
-  "name": "@forgeopslabs/fluxgate",
+  "name": "@forgeops/fluxgate",
   "version": "0.0.0-dev",
   "description": "FluxGate feature flag client for browsers and Node.js, with OpenFeature providers",
   "license": "Apache-2.0",

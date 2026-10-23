@@ -1,4 +1,4 @@
-import { FluxGateClient } from '@forgeopslabs/fluxgate';
+import { FluxGateClient } from '@forgeops/fluxgate';
 import { act, cleanup, render, screen, waitFor } from '@testing-library/react';
 import { StrictMode, useState } from 'react';
 import { afterEach, describe, expect, it } from 'vitest';

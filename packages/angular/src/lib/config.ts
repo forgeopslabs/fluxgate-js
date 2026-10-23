@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import type { EvaluationContext, FluxGateClient, FluxGateOptions } from '@forgeopslabs/fluxgate';
+import type { EvaluationContext, FluxGateClient, FluxGateOptions } from '@forgeops/fluxgate';
 
 /** Settings for {@link provideFluxGate}. Pass either `options` or `client`. */
 export interface FluxGateConfig {

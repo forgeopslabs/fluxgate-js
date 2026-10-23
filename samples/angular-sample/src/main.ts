@@ -1,6 +1,6 @@
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideFluxGate } from '@forgeopslabs/fluxgate-angular';
+import { provideFluxGate } from '@forgeops/fluxgate-angular';
 import { AppComponent, USERS } from './app/app.component';
 import { fluxgateSettings } from './environments/fluxgate.generated';
 

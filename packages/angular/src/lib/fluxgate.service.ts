@@ -6,7 +6,7 @@ import {
   type FlagSnapshot,
   type FluxGateError,
   type SnapshotStatus,
-} from '@forgeopslabs/fluxgate';
+} from '@forgeops/fluxgate';
 import { FLUXGATE_CONFIG } from './config';
 
 /**

@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { FluxGateFlagDirective, FluxGateService } from '@forgeopslabs/fluxgate-angular';
+import { FluxGateFlagDirective, FluxGateService } from '@forgeops/fluxgate-angular';
 
 export const USERS = [
   { targetingKey: 'user-1', country: 'CA', user_tier: 'plus' },

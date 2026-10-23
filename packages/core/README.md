@@ -1,20 +1,20 @@
-# @forgeopslabs/fluxgate
+# @forgeops/fluxgate
 
 FluxGate feature flag client for browsers and Node.js 20+. It evaluates flags against a FluxGate
 edge server over [OFREP](https://openfeature.dev/specification/appendix-c), authenticated with a
 FluxGate client's SDK key. No runtime dependencies.
 
 ```bash
-npm install @forgeopslabs/fluxgate
+npm install @forgeops/fluxgate
 ```
 
-For React use [`@forgeopslabs/fluxgate-react`](https://www.npmjs.com/package/@forgeopslabs/fluxgate-react),
-for Angular [`@forgeopslabs/fluxgate-angular`](https://www.npmjs.com/package/@forgeopslabs/fluxgate-angular).
+For React use [`@forgeops/fluxgate-react`](https://www.npmjs.com/package/@forgeops/fluxgate-react),
+for Angular [`@forgeops/fluxgate-angular`](https://www.npmjs.com/package/@forgeops/fluxgate-angular).
 
 ## FluxGateClient
 
 ```ts
-import { FluxGateClient } from '@forgeopslabs/fluxgate';
+import { FluxGateClient } from '@forgeops/fluxgate';
 
 const fluxgate = new FluxGateClient({
   baseUrl: 'https://edge.example.com',
@@ -90,7 +90,7 @@ Browsers, with `@openfeature/web-sdk`:
 
 ```ts
 import { OpenFeature } from '@openfeature/web-sdk';
-import { FluxGateWebProvider } from '@forgeopslabs/fluxgate/openfeature/web';
+import { FluxGateWebProvider } from '@forgeops/fluxgate/openfeature/web';
 
 await OpenFeature.setContext({ targetingKey: 'user-1', country: 'CA' });
 await OpenFeature.setProviderAndWait(new FluxGateWebProvider({ baseUrl, sdkKey }));
@@ -104,7 +104,7 @@ Node.js, with `@openfeature/server-sdk`:
 
 ```ts
 import { OpenFeature } from '@openfeature/server-sdk';
-import { FluxGateServerProvider } from '@forgeopslabs/fluxgate/openfeature/server';
+import { FluxGateServerProvider } from '@forgeops/fluxgate/openfeature/server';
 
 await OpenFeature.setProviderAndWait(new FluxGateServerProvider({ baseUrl, sdkKey }));
 await OpenFeature.getClient().getBooleanValue('new-checkout', false, { targetingKey: 'user-1' });

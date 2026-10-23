@@ -2,13 +2,13 @@
   "name": "fluxgate-node-sample",
   "private": true,
   "type": "module",
-  "description": "Node.js sample for @forgeopslabs/fluxgate: FluxGateClient and the OpenFeature server provider",
+  "description": "Node.js sample for @forgeops/fluxgate: FluxGateClient and the OpenFeature server provider",
   "scripts": {
     "start": "tsx --env-file-if-exists=../.env src/index.ts",
     "build": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@forgeopslabs/fluxgate": "workspace:*",
+    "@forgeops/fluxgate": "workspace:*",
     "@openfeature/server-sdk": "^1.23.0"
   },
   "devDependencies": {

@@ -1,17 +1,17 @@
-# @forgeopslabs/fluxgate-angular
+# @forgeops/fluxgate-angular
 
 Angular providers, signals and a structural directive for FluxGate feature flags. Works with
 Angular 19 and later, with or without zone.js.
 
 ```bash
-npm install @forgeopslabs/fluxgate @forgeopslabs/fluxgate-angular
+npm install @forgeops/fluxgate @forgeops/fluxgate-angular
 ```
 
 ## Setup
 
 ```ts
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideFluxGate } from '@forgeopslabs/fluxgate-angular';
+import { provideFluxGate } from '@forgeops/fluxgate-angular';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -76,7 +76,7 @@ Use a FluxGate **Web** client and list your app's origins in its **Web Origins**
 include a `targetingKey`: the signed-in user's ID, or a random ID stored on the device for anonymous
 visitors.
 
-See [`@forgeopslabs/fluxgate`](https://www.npmjs.com/package/@forgeopslabs/fluxgate) for how
+See [`@forgeops/fluxgate`](https://www.npmjs.com/package/@forgeops/fluxgate) for how
 evaluation works.
 
 ## License

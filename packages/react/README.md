@@ -1,16 +1,16 @@
-# @forgeopslabs/fluxgate-react
+# @forgeops/fluxgate-react
 
 React provider and hooks for FluxGate feature flags. Works with React 18 and 19, including
 StrictMode.
 
 ```bash
-npm install @forgeopslabs/fluxgate @forgeopslabs/fluxgate-react
+npm install @forgeops/fluxgate @forgeops/fluxgate-react
 ```
 
 ## Usage
 
 ```tsx
-import { FluxGateProvider, useFlag, useFlagDetails, useFluxGateStatus, useIsEnabled } from '@forgeopslabs/fluxgate-react';
+import { FluxGateProvider, useFlag, useFlagDetails, useFluxGateStatus, useIsEnabled } from '@forgeops/fluxgate-react';
 
 const options = {
   baseUrl: 'https://edge.example.com',
@@ -55,7 +55,7 @@ Use a FluxGate **Web** client and list your app's origins in its **Web Origins**
 include a `targetingKey`: the signed-in user's ID, or a random ID stored on the device for anonymous
 visitors.
 
-See [`@forgeopslabs/fluxgate`](https://www.npmjs.com/package/@forgeopslabs/fluxgate) for how
+See [`@forgeops/fluxgate`](https://www.npmjs.com/package/@forgeops/fluxgate) for how
 evaluation works.
 
 ## License

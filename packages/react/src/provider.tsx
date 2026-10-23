@@ -3,7 +3,7 @@ import {
   type EvaluationContext,
   type FlagSnapshot,
   type FluxGateOptions,
-} from '@forgeopslabs/fluxgate';
+} from '@forgeops/fluxgate';
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 
 interface FluxGateContextValue {

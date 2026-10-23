@@ -2,15 +2,15 @@
   "name": "fluxgate-react-sample",
   "private": true,
   "type": "module",
-  "description": "React sample for @forgeopslabs/fluxgate-react",
+  "description": "React sample for @forgeops/fluxgate-react",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit -p tsconfig.json && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@forgeopslabs/fluxgate": "workspace:*",
-    "@forgeopslabs/fluxgate-react": "workspace:*",
+    "@forgeops/fluxgate": "workspace:*",
+    "@forgeops/fluxgate-react": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

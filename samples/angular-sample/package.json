@@ -1,7 +1,7 @@
 {
   "name": "fluxgate-angular-sample",
   "private": true,
-  "description": "Angular sample for @forgeopslabs/fluxgate-angular",
+  "description": "Angular sample for @forgeops/fluxgate-angular",
   "scripts": {
     "start": "node scripts/write-env.mjs && ng serve",
     "build": "node scripts/write-env.mjs && ng build"
@@ -12,8 +12,8 @@
     "@angular/core": "~19.2.25",
     "@angular/forms": "~19.2.25",
     "@angular/platform-browser": "~19.2.25",
-    "@forgeopslabs/fluxgate": "workspace:*",
-    "@forgeopslabs/fluxgate-angular": "workspace:*",
+    "@forgeops/fluxgate": "workspace:*",
+    "@forgeops/fluxgate-angular": "workspace:*",
     "rxjs": "^7.8.2",
     "tslib": "^2.8.1"
   },

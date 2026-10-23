@@ -1,5 +1,5 @@
 {
-  "name": "@forgeopslabs/fluxgate-react",
+  "name": "@forgeops/fluxgate-react",
   "version": "0.0.0-dev",
   "description": "React provider and hooks for FluxGate feature flags",
   "license": "Apache-2.0",
@@ -44,11 +44,11 @@
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "peerDependencies": {
-    "@forgeopslabs/fluxgate": "workspace:^",
+    "@forgeops/fluxgate": "workspace:^",
     "react": ">=18"
   },
   "devDependencies": {
-    "@forgeopslabs/fluxgate": "workspace:*",
+    "@forgeops/fluxgate": "workspace:*",
     "@testing-library/react": "^16.3.0",
     "@types/react": "^19.0.0",
     "jsdom": "^26.1.0",

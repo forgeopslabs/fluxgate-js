@@ -1,10 +1,10 @@
-# Publishes @forgeopslabs/fluxgate, @forgeopslabs/fluxgate-react and
-# @forgeopslabs/fluxgate-angular to npm when a GitHub release is published.
+# Publishes @forgeops/fluxgate, @forgeops/fluxgate-react and
+# @forgeops/fluxgate-angular to npm when a GitHub release is published.
 # The release tag sets the version of all three: tag v1.2.3 publishes 1.2.3.
 # A prerelease version such as 1.3.0-beta.1 is published under the "next" tag.
 #
 # Required repository secret:
-#   NPM_TOKEN - npm automation (or granular publish) token for the forgeopslabs org
+#   NPM_TOKEN - npm automation (or granular publish) token for the forgeops org
 
 name: Release to npm
 

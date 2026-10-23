@@ -6,9 +6,9 @@ Protocol), authenticated with a FluxGate client's SDK key.
 
 | Package | Use it for |
 |---|---|
-| [`@forgeopslabs/fluxgate`](packages/core) | Browsers and Node.js 20+. `FluxGateClient` (retries, timeouts, cache), `FlagSnapshot` for synchronous evaluations with polling, and OpenFeature providers for `@openfeature/web-sdk` and `@openfeature/server-sdk`. No dependencies. |
-| [`@forgeopslabs/fluxgate-react`](packages/react) | React 18+. `FluxGateProvider` and the hooks `useFlag`, `useFlagDetails`, `useIsEnabled`, `useFluxGateStatus`. |
-| [`@forgeopslabs/fluxgate-angular`](packages/angular) | Angular 19+. `provideFluxGate()`, `FluxGateService` with signals, and the `*fgFlag` directive. |
+| [`@forgeops/fluxgate`](packages/core) | Browsers and Node.js 20+. `FluxGateClient` (retries, timeouts, cache), `FlagSnapshot` for synchronous evaluations with polling, and OpenFeature providers for `@openfeature/web-sdk` and `@openfeature/server-sdk`. No dependencies. |
+| [`@forgeops/fluxgate-react`](packages/react) | React 18+. `FluxGateProvider` and the hooks `useFlag`, `useFlagDetails`, `useIsEnabled`, `useFluxGateStatus`. |
+| [`@forgeops/fluxgate-angular`](packages/angular) | Angular 19+. `provideFluxGate()`, `FluxGateService` with signals, and the `*fgFlag` directive. |
 
 [samples/](samples/) holds a Node.js app, a React app and an Angular app that run against a local
 FluxGate stack, which `samples/docker-compose.yml` starts.
@@ -16,11 +16,11 @@ FluxGate stack, which `samples/docker-compose.yml` starts.
 ## Quick start
 
 ```bash
-npm install @forgeopslabs/fluxgate
+npm install @forgeops/fluxgate
 ```
 
 ```ts
-import { FluxGateClient } from '@forgeopslabs/fluxgate';
+import { FluxGateClient } from '@forgeops/fluxgate';
 
 const fluxgate = new FluxGateClient({
   baseUrl: 'https://edge.example.com',
@@ -35,7 +35,7 @@ if (await fluxgate.isEnabled('new-checkout', { targetingKey: 'user-1', country: 
 React:
 
 ```tsx
-import { FluxGateProvider, useFlag } from '@forgeopslabs/fluxgate-react';
+import { FluxGateProvider, useFlag } from '@forgeops/fluxgate-react';
 
 <FluxGateProvider options={{ baseUrl, sdkKey }} context={{ targetingKey: user.id, country: user.country }}>
   <Checkout />
@@ -101,7 +101,7 @@ React 18 and 19.
 published. The tag sets the version: tag `v1.2.0` publishes `1.2.0`; a prerelease such as
 `v1.3.0-beta.1` goes to the `next` dist-tag. Packages in the repository stay on `0.0.0-dev`.
 
-One-time setup: create the npm organization `forgeopslabs`, create an automation (or granular
+One-time setup: create the npm organization `forgeops`, create an automation (or granular
 publish) token that can publish to it, and add it as the repository secret `NPM_TOKEN`.
 
 ## License

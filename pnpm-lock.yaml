@@ -38,7 +38,7 @@ importers:
       '@angular/platform-browser-dynamic':
         specifier: ~19.2.25
         version: 19.2.25(@angular/common@19.2.25(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/compiler@19.2.25)(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@19.2.25(@angular/common@19.2.25(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1)))
-      '@forgeopslabs/fluxgate':
+      '@forgeops/fluxgate':
         specifier: workspace:*
         version: link:../core
       jsdom:
@@ -72,7 +72,7 @@ importers:
 
   packages/react:
     devDependencies:
-      '@forgeopslabs/fluxgate':
+      '@forgeops/fluxgate':
         specifier: workspace:*
         version: link:../core
       '@testing-library/react':
@@ -111,10 +111,10 @@ importers:
       '@angular/platform-browser':
         specifier: ~19.2.25
         version: 19.2.25(@angular/common@19.2.25(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))
-      '@forgeopslabs/fluxgate':
+      '@forgeops/fluxgate':
         specifier: workspace:*
         version: link:../../packages/core
-      '@forgeopslabs/fluxgate-angular':
+      '@forgeops/fluxgate-angular':
         specifier: workspace:*
         version: link:../../packages/angular/dist
       rxjs:
@@ -136,7 +136,7 @@ importers:
 
   samples/node-sample:
     dependencies:
-      '@forgeopslabs/fluxgate':
+      '@forgeops/fluxgate':
         specifier: workspace:*
         version: link:../../packages/core
       '@openfeature/server-sdk':
@@ -149,10 +149,10 @@ importers:
 
   samples/react-sample:
     dependencies:
-      '@forgeopslabs/fluxgate':
+      '@forgeops/fluxgate':
         specifier: workspace:*
         version: link:../../packages/core
-      '@forgeopslabs/fluxgate-react':
+      '@forgeops/fluxgate-react':
         specifier: workspace:*
         version: link:../../packages/react
       react:

@@ -45,7 +45,7 @@ jobs:
           node-version: '22'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @forgeopslabs/fluxgate build
+      - run: pnpm --filter @forgeops/fluxgate build
       - name: Test the React adapter against React 18
         working-directory: packages/react
         run: |
